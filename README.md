@@ -13,13 +13,4 @@ This project is a simple **Thermodynamic Calculator** web application built usin
 - Python
 - Flask (for the backend)
 - HTML & CSS (for the frontend)
-  
-## Installation
 
-To run this project locally, follow these steps:
-
-### 1. Clone the repository:
-
-```bash
-git clone https://github.com/yourusername/thermodynamic-calculator.git
-cd thermodynamic-calculator
