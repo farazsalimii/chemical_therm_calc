@@ -1,6 +1,25 @@
-## Chemical Thermodynamics Calculator
+# Thermodynamic Calculator Web Application
 
-### Objective: Develop a Python tool that calculates thermodynamic properties (enthalpy, entropy, Gibbs free energy) for a given chemical system.
+This project is a simple **Thermodynamic Calculator** web application built using Flask. It allows users to calculate important thermodynamic quantities such as **Enthalpy**, **Entropy**, and **Gibbs Free Energy** through a user-friendly web interface.
 
-Skills Highlighted: Thermodynamic principles, physical chemistry, data manipulation.
-Tools/Libraries: Pandas for data handling and SciPy for equation solving.
+## Features
+
+- **Enthalpy Calculation**: Input values for internal energy, pressure, and volume to calculate enthalpy.
+- **Entropy Calculation**: Calculate entropy change based on reversible heat exchange and temperature.
+- **Gibbs Free Energy Calculation**: Compute Gibbs free energy based on changes in enthalpy, entropy, and temperature.
+
+## Technologies Used
+
+- Python
+- Flask (for the backend)
+- HTML & CSS (for the frontend)
+  
+## Installation
+
+To run this project locally, follow these steps:
+
+### 1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/thermodynamic-calculator.git
+cd thermodynamic-calculator
