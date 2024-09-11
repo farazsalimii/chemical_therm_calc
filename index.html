@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thermodynamic Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9ffe9;
+            border: 1px solid #b3ffb3;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Thermodynamic Calculator</h1>
+        <form action="/calculate" method="POST">
+            <div class="form-group">
+                <label for="command">What would you like to calculate?</label>
+                <input type="text" id="command" name="command" required placeholder="enthalpy, entropy, gibbs">
+            </div>
+
+            <!-- For Enthalpy -->
+            <div class="form-group">
+                <label for="internal_energy">Internal Energy (J):</label>
+                <input type="number" step="any" id="internal_energy" name="internal_energy" placeholder="Enter Internal Energy">
+            </div>
+
+            <div class="form-group">
+                <label for="pressure">Pressure (Pa):</label>
+                <input type="number" step="any" id="pressure" name="pressure" placeholder="Enter Pressure">
+            </div>
+
+            <div class="form-group">
+                <label for="volume">Volume (m^3):</label>
+                <input type="number" step="any" id="volume" name="volume" placeholder="Enter Volume">
+            </div>
+
+            <!-- For Entropy -->
+            <div class="form-group">
+                <label for="q_rev">Reversible Heat Exchange (q_rev) in J:</label>
+                <input type="number" step="any" id="q_rev" name="q_rev" placeholder="Enter q_rev">
+            </div>
+
+            <div class="form-group">
+                <label for="temperature">Temperature (K):</label>
+                <input type="number" step="any" id="temperature" name="temperature" placeholder="Enter Temperature">
+            </div>
+
+            <!-- For Gibbs Free Energy -->
+            <div class="form-group">
+                <label for="delta_H">Change in Enthalpy (ΔH) in J:</label>
+                <input type="number" step="any" id="delta_H" name="delta_H" placeholder="Enter ΔH">
+            </div>
+
+            <div class="form-group">
+                <label for="delta_S">Change in Entropy (ΔS) in J/K:</label>
+                <input type="number" step="any" id="delta_S" name="delta_S" placeholder="Enter ΔS">
+            </div>
+
+            <button type="submit">Calculate</button>
+        </form>
+
+        {% if result %}
+        <div class="result">
+            <p>{{ result }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
